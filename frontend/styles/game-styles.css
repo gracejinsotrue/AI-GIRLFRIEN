@@ -33,7 +33,6 @@ body {
 }
 
 .girl-gif img {
-  /* max-width: 100%; */
   max-height: 90vh;
   width: auto;
   border-radius: 0;
@@ -41,33 +40,6 @@ body {
   object-fit: contain;
 }
 
-
-/* Microphone Button Styling */
-.microphone-container {
-  flex: 1;
-  display: flex;
-  justify-content: left center;
-  align-items: center;
-  margin-left: 6rem;
-}
-
-.microphone-btn {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background-color: #ff69b4;
-  border: none;
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-}
-
-.microphone-btn:hover {
-  background-color: #ff1493;
-  transform: scale(1.1);
-}
 
 /* Chat Container */
 .chat-container {
