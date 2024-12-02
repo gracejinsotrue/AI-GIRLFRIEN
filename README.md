@@ -92,3 +92,7 @@ The frontend consists of HTML, JavaScript, and CSS that handle the user interfac
 
 - **CORS Error**: Ensure that CORS is enabled and that the frontend and backend are using compatible ports.
 - **API Key Errors**: Ensure your OpenAI API key is correctly set in your environment variables.
+
+
+<img width="734" alt="Screenshot 2024-12-01 at 9 24 40 PM" src="https://github.com/user-attachments/assets/4b3c2864-0422-4840-bcb6-07ed6ef555f6">
+Us when we have bugs and just leave them because we are two chill guys
