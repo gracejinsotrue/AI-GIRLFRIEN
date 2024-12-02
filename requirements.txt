@@ -1,0 +1,4 @@
+google-cloud-speech==3.0.2
+google-cloud-texttospeech==3.0.2
+openai==0.27.0
+python-dotenv==1.0.1
