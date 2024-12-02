@@ -1,6 +1,6 @@
 # My Skibidi Girlfriend
 
-This project allows users to chat with a #kawaii girlfriend who is majoring in computer science. Works by transcribing voice input using Google Cloud Speech-to-Text, generate a response from GPT-3.5, and convert that response to speech using Google Text-to-Speech API. It involves both a Node.js backend and a JavaScript frontend. 
+This project allows users to chat with a #kawaii girlfriend who is majoring in computer science. Works by receiving messages from user, generate real-time responses from GPT-3.5, and displaying chat history to user. It involves both a Node.js backend and a JavaScript frontend. 
 
 ## Table of Contents
 
@@ -40,11 +40,11 @@ This project allows users to chat with a #kawaii girlfriend who is majoring in c
 
 The backend is implemented using **Node.js** and handles the following tasks:
 
-- Receives the uploaded audio file.
-- Transcribes the audio file to text using Google Cloud Speech-to-Text.
+- Receives uploaded audio files. (currently not in use)
+- Transcribes an audio file to text using Google Cloud Speech-to-Text. (currently not in use)
 - Sends the transcribed text to OpenAI GPT-3 for a response.
 - Returns the GPT-3 response to the frontend.
-- Converts the GPT-3 response to audio using Google Text-to-Speech.
+- Converts the GPT-3 response to audio using Google Text-to-Speech. (currently not in use)
 
 ### Run the Backend
 
@@ -58,14 +58,7 @@ The backend is implemented using **Node.js** and handles the following tasks:
 
 ## Frontend Setup
 
-The frontend consists of HTML, JavaScript, and CSS that handle the user interface. The user can upload an audio file, and the frontend will send it to the Node.js backend for processing.
-
-### Frontend Workflow
-
-1. **File Upload**: Users upload an audio file using the frontend interface.
-2. **Transcription**: The frontend sends the audio to the backend, which processes it using Google Cloud Speech-to-Text and returns the transcription.
-3. **GPT-3 Response**: The transcribed text is sent to OpenAI GPT-3.5, which generates a response.
-4. **Text-to-Speech**: The backend sends the GPT-3 response to the frontend, where it is converted to speech using Google Text-to-Speech API.
+The frontend consists of HTML, JavaScript, and CSS that handle the user interface. The user can send messages, and the frontend will send them to the Node.js backend for processing.
 
 ### Run the Frontend
 
@@ -98,5 +91,4 @@ The frontend consists of HTML, JavaScript, and CSS that handle the user interfac
 ## Troubleshooting
 
 - **CORS Error**: Ensure that CORS is enabled and that the frontend and backend are using compatible ports.
-- **Audio Transcription Issues**: Double-check your Google Cloud credentials and ensure the Speech-to-Text API is properly configured.
 - **API Key Errors**: Ensure your OpenAI API key is correctly set in your environment variables.
