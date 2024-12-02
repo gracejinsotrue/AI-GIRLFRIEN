@@ -1,0 +1,233 @@
+/* Fullscreen Background */
+body {
+  /* image from https://media.istockphoto.com/id/1404046691/vector/classroom-evening-2d-anime-background-illustration.jpg?s=612x612&w=0&k=20&c=QYDGZ72zFNNWMoR1UpAR5rGY3OFQ3-ieR4ZL3FEA1rA= */
+  background-image: url('../assets/background.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Game Layout */
+.game-container {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  height: 90%;
+}
+
+
+/* Girl GIF on Right Side */
+.girl-gif {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  /* Aligns the GIF to the bottom */
+  position: absolute;
+  bottom: 0;
+  right: 6em;
+  margin: 0;
+}
+
+.girl-gif img {
+  /* max-width: 100%; */
+  max-height: 90vh;
+  width: auto;
+  border-radius: 0;
+  box-shadow: none;
+  object-fit: contain;
+}
+
+
+/* Microphone Button Styling */
+.microphone-container {
+  flex: 1;
+  display: flex;
+  justify-content: left center;
+  align-items: center;
+  margin-left: 6rem;
+}
+
+.microphone-btn {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #ff69b4;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.microphone-btn:hover {
+  background-color: #ff1493;
+  transform: scale(1.1);
+}
+
+/* Chat Container */
+.chat-container {
+  position: fixed;
+  align-items: center left;
+  margin-left: 8rem;
+  width: 50%;
+  background-color: rgba(255, 192, 203, 0.9);
+  /* Light pink with slight transparency */
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 80%;
+}
+
+/* Chat Box */
+.chat-box {
+  flex-grow: 1;
+  padding: 10px;
+  overflow-y: auto;
+  /* max-height: 400px; */
+  /* Set a maximum height */
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+/* Messages */
+.message {
+  margin: 5px 0;
+  padding: 8px 12px;
+  border-radius: 12px;
+  max-width: 80%;
+}
+
+.message.user {
+  background-color: #add8e6;
+  /* Light blue for user messages */
+  align-self: flex-end;
+}
+
+.message.girlfriend {
+  background-color: #ffe4e1;
+  /* Light pink for girlfriend messages */
+  align-self: flex-start;
+}
+
+/* Input Container */
+.input-container {
+  display: flex;
+  padding: 10px;
+  background-color: #f8f8f8;
+  border-top: 1px solid #ddd;
+}
+
+/* Input Field */
+.message-input {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  margin-right: 10px;
+}
+
+/* Send Button */
+.send-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #ff69b4;
+  /* Hot pink */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.send-button:hover {
+  background-color: #ff1493;
+  /* Deeper pink on hover */
+}
+
+
+/* Loading icon styles */
+.loading {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 5px;
+}
+
+.loading span.dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 3px;
+  background-color: #ffe4e1;
+  border-radius: 50%;
+  animation: blink 1.4s infinite;
+}
+
+.loading span.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading span.dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Loading animation */
+@keyframes blink {
+
+  0%,
+  80%,
+  100% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 1;
+  }
+}
+
+.music-controls {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.music-controls button {
+  background-color: #ff69b4;
+  /* Hot pink background */
+  color: white;
+  /* White text */
+  font-size: 16px;
+  /* Larger text size */
+  font-family: 'Arial', sans-serif;
+  padding: 10px 20px;
+  /* Padding for a larger button */
+  border: none;
+  /* Remove border */
+  border-radius: 10px;
+  /* Rounded corners */
+  cursor: pointer;
+  /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  /* Smooth transitions */
+}
+
+.music-controls button:hover {
+  background-color: #ff85c2;
+  /* Slightly lighter pink on hover */
+  transform: scale(1.1);
+  /* Slight zoom effect */
+}
+
+.music-controls button:active {
+  background-color: #ff3a8c;
+  /* Darker pink on click */
+  transform: scale(1.05);
+  /* Slightly smaller zoom */
+}
