@@ -1,5 +1,8 @@
 # My Skibidi Girlfriend
 
+<img width="715" alt="Screenshot 2024-12-01 at 9 25 56 PM" src="https://github.com/user-attachments/assets/3fb15c18-497e-4aaa-a61e-7f45d4fe5ee2">
+
+
 This project allows users to chat with a #kawaii girlfriend who is majoring in computer science. Works by receiving messages from user, generate real-time responses from GPT-3.5, and displaying chat history to user. It involves both a Node.js backend and a JavaScript frontend. 
 
 ## Table of Contents
