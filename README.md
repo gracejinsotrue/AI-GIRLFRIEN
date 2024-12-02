@@ -95,4 +95,5 @@ The frontend consists of HTML, JavaScript, and CSS that handle the user interfac
 
 
 <img width="734" alt="Screenshot 2024-12-01 at 9 24 40 PM" src="https://github.com/user-attachments/assets/4b3c2864-0422-4840-bcb6-07ed6ef555f6">
+
 Us when we have bugs and just leave them because we are two chill guys
