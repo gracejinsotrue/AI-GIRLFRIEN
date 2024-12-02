@@ -15,6 +15,7 @@ This project allows users to chat with a #kawaii girlfriend who is majoring in c
 ### Prerequisites
 
 - Node.js and npm
+- Running locally requires OpenAI API key (message me if you need one)
 
 ### 1. Install Backend Dependencies
 
@@ -23,6 +24,7 @@ This project allows users to chat with a #kawaii girlfriend who is majoring in c
 2. Navigate to the backend directory and install Node.js dependencies:
 
    - `npm install`
+3. Add OpenAI API key to a .env in your root directory. 
 
 ### 2. Install Frontend Dependencies
 
