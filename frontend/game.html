@@ -1,0 +1,177 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio Transcription & Response</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    input[type="file"] {
+      margin: 20px 0;
+    }
+
+    .result {
+      margin-top: 20px;
+    }
+
+    .loading {
+      display: none;
+      font-size: 18px;
+      color: gray;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Audio Transcription & Response</h1>
+  <p>Select an audio file to transcribe and get a response</p>
+
+  <!-- File Upload Form -->
+<!-- <input type="file" id="audio-upload" accept="audio/*"> -->
+<!-- <form id="audio-upload">
+    <label for="audioInput">Upload your audio file:</label>
+    <input type="file" id="audioInput" name="audio" accept="audio/*" required>
+    <button type="submit">Submit</button>
+  </form>
+  <div class="loading">Processing... Please wait.</div>
+
+  <div class="result">
+    <h2>Generated Audio:</h2>
+    <audio id="output-audio" controls></audio>
+  </div>
+
+  Include script.js -->
+<!-- <script src="script.js"></script>
+</body>
+
+</html> -->
+<!-- 
+<!DOCTYPE html>
+<html lang="en"> -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Skibidi Girlfriend Simulator</title>
+  <link rel="stylesheet" href="styles/game-styles.css">
+</head>
+
+<body>
+  <div class="game-container">
+    <!-- Background and Layout -->
+
+    <div class="chat-container">
+      <!-- Chat Box for Messages -->
+      <div id="chat-box" class="chat-box"></div>
+      <!-- Input Box and Send Button -->
+      <div class="input-container">
+        <input type="text" id="message-input" class="message-input" placeholder="Type your message here...">
+        <button id="send-button" class="send-button">Send</button>
+      </div>
+    </div>
+
+    <audio id="background-music" autoplay loop>
+      <source src="assets/background-music.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <div class="music-controls">
+      <button id="toggle-music">Play Music</button>
+    </div>
+
+    <!-- <div class="microphone-container">
+      <button class="microphone-btn" id="microphone-btn">🎤</button>
+    </div> -->
+
+    <div class="girl-gif">
+      <img src="assets/girl_blush.gif" alt="Animated Girl">
+    </div>
+  </div>
+
+  <script>
+    const chatBox = document.querySelector(".chat-box");
+    const messageInput = document.querySelector(".message-input");
+    const sendButton = document.querySelector(".send-button");
+
+    const backgroundMusic = document.getElementById("background-music");
+    const toggleMusicButton = document.getElementById("toggle-music");
+
+    toggleMusicButton.addEventListener("click", () => {
+      if (backgroundMusic.paused) {
+        backgroundMusic.play();
+        toggleMusicButton.textContent = "Pause Music";
+      } else {
+        backgroundMusic.pause();
+        toggleMusicButton.textContent = "Play Music";
+      }
+    });
+
+    // Function to create a message blob
+    function createMessageBlob(message, sender = "user") {
+      const messageDiv = document.createElement("div");
+      messageDiv.classList.add("message", sender);
+      messageDiv.textContent = message;
+      chatBox.appendChild(messageDiv);
+      chatBox.scrollTop = chatBox.scrollHeight; // Auto-scroll to the latest message
+    }
+
+    // Function to create a loading icon
+    function createLoadingIcon() {
+      const loadingDiv = document.createElement("div");
+      loadingDiv.classList.add("loading", "girlfriend");
+      loadingDiv.innerHTML = `<span class="dot"></span><span class="dot"></span><span class="dot"></span>`;
+      chatBox.appendChild(loadingDiv);
+      chatBox.scrollTop = chatBox.scrollHeight; // Auto-scroll to the latest message
+      return loadingDiv;
+    }
+
+    // Send button event listener
+    sendButton.addEventListener("click", async () => {
+      const userMessage = messageInput.value.trim();
+      if (!userMessage) return; // Ignore empty messages
+
+      // Add user's message to the chat
+      createMessageBlob(userMessage, "user");
+
+      // Clear the input box
+      messageInput.value = "";
+
+      // Create loading animation
+      const loadingIcon = createLoadingIcon();
+
+      try {
+        // Fetch the response from the backend
+        const response = await fetch("http://localhost:5000/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: userMessage }),
+        });
+
+        if (!response.ok) {
+          throw new Error("Failed to fetch the response.");
+        }
+
+        const { girlfriendResponse } = await response.json();
+
+        // Remove the loading icon
+        loadingIcon.remove();
+
+        // Add girlfriend's response to the chat
+        createMessageBlob(girlfriendResponse, "girlfriend");
+      } catch (error) {
+        console.error("Error:", error);
+        loadingIcon.remove();
+        createMessageBlob("Sorry, something went wrong.", "girlfriend");
+      }
+    });
+
+  </script>
+</body>
+
+</html>
