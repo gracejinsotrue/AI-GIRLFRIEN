@@ -5,6 +5,7 @@
 
 This project allows users to chat with a #kawaii girlfriend who is majoring in computer science. Works by receiving messages from user, generate real-time responses from GPT-3.5, and displaying chat history to user. It involves both a Node.js backend and a JavaScript frontend. 
 
+# EDIT LMFAOOOOOOOOOO WE WON LMFAOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 ## Table of Contents
 
 - [Installation](#installation)
